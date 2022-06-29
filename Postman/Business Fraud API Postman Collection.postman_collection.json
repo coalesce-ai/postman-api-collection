@@ -1,0 +1,31 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Business Fraud API Postman Collection",
+		"_postman_id": "3e6edc8e-207f-e093-031d-84d65baf6b0d",
+		"description": "Business Fraud API Postman Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Business Fraud API",
+			"request": {
+				"url": "https://sandbox-ict.fiverity.com/api/predict/business",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"firstName\": \"John\",\r\n  \"lastName\": \"Smith\",\r\n  \"ssn\": \"000000000\",\r\n  \"dob\": \"2000-01-01\",\r\n  \"email\": \"john.Smith@grasshopper.com\",\r\n  \"address\": {\r\n    \"addressLine1\": \"100 Main St\",\r\n    \"addressLine2\": \"Apt 1\",\r\n    \"city\": \"Boston\",\r\n    \"state\": \"MA\",\r\n    \"zip\": \"02115\",\r\n    \"country\": \"US\"\r\n  },\r\n  \"countryCode\": \"+1\",\r\n  \"phone\": \"9876543210\",\r\n  \"vendorInputs\": {}\r\n}"
+				},
+				"description": "Business Fraud API"
+			},
+			"response": []
+		}
+	]
+}
