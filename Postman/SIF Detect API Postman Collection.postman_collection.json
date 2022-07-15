@@ -21,7 +21,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "[\n  {\n    \"applicantDetails\": {\n      \"age\": 40,\n      \"applicationNumber\": \"654321\",\n      \"loanAmount\": 1000,\n      \"loanProcessedDate\": \"07/09/21\",\n      \"loanStatus\": \"APPROVED\",\n      \"loanType\": \"PL\",\n      \"usecaseType\": \"APPLICATION_FRAUD\"\n    },\n    \"identity\": {\n      \"addressElements\": [\n        \"SUL\"\n      ],\n      \"city\": \"XXXXX\",\n      \"dob\": \"08/23/1980\",\n      \"email\": \"xyz@abc.com\",\n      \"firstName\": \"James\",\n      \"lastName\": \"Man\",\n      \"phone\": \"9080182324\",\n      \"ssn\": \"678543123\",\n      \"state\": \"XX\",\n      \"zipcode\": \"XXXXX\"\n    },\n    \"otherInputs\": {}\n  }\n]"
+					"raw": "[\n  {\n    \"applicantDetails\": {\n      \"age\": 40,\n      \"applicationNumber\": \"654321\",\n      \"loanAmount\": 1000,\n      \"loanProcessedDate\": \"07/09/21\",\n      \"loanStatus\": \"APPROVED\",\n      \"loanType\": \"PL\",\n      \"usecaseType\": \"APPLICATION_FRAUD\"\n    },\n    \"identity\": {\n      \"addressElements\": [\n        \"SUL\"\n      ],\n      \"city\": \"XXXXX\",\n      \"dob\": \"01/23/1980\",\n      \"email\": \"xyz@abc.com\",\n      \"firstName\": \"John\",\n      \"lastName\": \"Smith\",\n      \"phone\": \"9876543210\",\n      \"ssn\": \"000000000\",\n      \"state\": \"XX\",\n      \"zipcode\": \"XXXXX\"\n    },\n    \"otherInputs\": {}\n  }\n]"
 				},
 				"description": ""
 			},
