@@ -21,7 +21,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"firstName\": \"John\",\n  \"lastName\": \"Smith\",\n  \"ssn\": \"000000000\",\n  \"dob\": \"1980-23-01\",\n  \"email\": \"xyz@abc.com\",\n  \"address\": {\n    \"addressLine1\": \"100 Main St\",\n    \"addressLine2\": \"Apt 1\",\n    \"city\": \"XXXXX\",\n    \"state\": \"XX\",\n    \"zip\": \"XXXXX\",\n    \"country\": \"XX\"\n  },\n  \"countryCode\": \"+1\",\n  \"phone\": \"9876543210\",\n  \"vendorInputs\": {}\n}"
+					"raw": "{\n  \"firstName\": \"John\",\n  \"lastName\": \"Smith\",\n  \"ssn\": \"000000000\",\n  \"dob\": \"1980-01-23\",\n  \"email\": \"xyz@abc.com\",\n  \"address\": {\n    \"addressLine1\": \"100 Main St\",\n    \"addressLine2\": \"Apt 1\",\n    \"city\": \"XXXXX\",\n    \"state\": \"XX\",\n    \"zip\": \"11111\",\n    \"country\": \"XX\"\n  },\n  \"countryCode\": \"+1\",\n  \"phone\": \"9876543210\",\n  \"vendorInputs\": {}\n}"
 				},
 				"description": "Business Fraud API"
 			},
