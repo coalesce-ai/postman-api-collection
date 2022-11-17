@@ -1,0 +1,31 @@
+{
+	"variables": [],
+	"info": {
+		"name": "DFN Lookup API Postman Collection",
+		"_postman_id": "139845c0-0870-1452-b67a-91a2b67012b3",
+		"description": "DFN Lookup API Postman Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "DFN Lookup API",
+			"request": {
+				"url": "https://sandbox-dfn.fiverity.com/v1.0/api/lookup",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"lastName\": \"Smith\",\n  \"ssn\": \"000000000\",\n  \"dob\": \"01-15-1987\"\n}"
+				},
+				"description": "DFN Lookup API"
+			},
+			"response": []
+		}
+	]
+}
