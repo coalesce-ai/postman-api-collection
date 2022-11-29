@@ -2,7 +2,7 @@
 	"variables": [],
 	"info": {
 		"name": "DFN Lookup API Postman Collection",
-		"_postman_id": "139845c0-0870-1452-b67a-91a2b67012b3",
+		"_postman_id": "341a2696-79a3-5fd9-bd45-4da103877b7b",
 		"description": "DFN Lookup API Postman Collection",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -21,7 +21,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"lastName\": \"Smith\",\n  \"ssn\": \"000000000\",\n  \"dob\": \"01-15-1987\"\n}"
+					"raw": "{\n\"requestID\":\"1234qweoejr-ekr-23knwker\",\n\"participantID\":\"1\",\n\"dateRequested\":\"2022-11-28\",\n\"identityElements\":{\n   \"firstName\":\"John\",\n   \"lastName\":\"Smith\",\n   \"ssn\":\"000000000\",\n   \"dob\":\"01-15-1987\",\n   \"email\":\"abc@gmail.com\",\n   \"phone\":\"617-555-1234\",\n   \"addressElements\":{\n     \"addressLine1\":\"1 Main Street\",\n     \"addressLine2\":\"apt 1\",\n     \"city\":\"Boston\",\n     \"state\":\"MA\",\n     \"zipcode\":\"02122\",\n     \"countryCode\":\"US\"\n   },\n   \"biometricElements\":[{\n     \"biometricType\":\"Selfie\",\n     \"data\":\"BASE64 ENCODED IMAGE\"\n   }]\n}\n}"
 				},
 				"description": "DFN Lookup API"
 			},
