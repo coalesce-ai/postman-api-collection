@@ -21,7 +21,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "[\r\n  {\r\n    \"applicantDetails\": {\r\n      \"age\": 40,\r\n      \"applicationNumber\": \"654321\",\r\n      \"loanAmount\": 1000,\r\n      \"loanProcessedDate\": \"07/15/2021\",\r\n      \"loanStatus\": \"APPROVED\",\r\n      \"loanType\": \"PL\",\r\n      \"usecaseType\": \"APPLICATION_FRAUD\"\r\n    },\r\n    \"identity\": {\r\n      \"addressElements\": [\r\n        \"SUL\"\r\n      ],\r\n      \"city\": \"XXXXX\",\r\n      \"dob\": \"01/23/1980\",\r\n      \"email\": \"xyz@abc.com\",\r\n      \"firstName\": \"John\",\r\n      \"lastName\": \"Smith\",\r\n      \"phone\": \"9876543210\",\r\n      \"ssn\": \"000000000\",\r\n      \"state\": \"XX\",\r\n      \"zipcode\": \"XXXXX\"\r\n    },\r\n    \"otherInputs\": {}\r\n  }\r\n]"
+					"raw": "[\r\n  {\r\n    \"applicantDetails\": {\r\n      \"age\": 40,\r\n      \"applicationNumber\": \"654321\",\r\n      \"loanAmount\": 1000,\r\n      \"loanProcessedDate\": \"07/15/2021\",\r\n      \"loanStatus\": \"APPROVED\",\r\n      \"loanType\": \"PL\",\r\n      \"ip\": \"192.168.0.1\",\r\n      \"usecaseType\": \"APPLICATION_FRAUD\"\r\n    },\r\n    \"identity\": {\r\n      \"addressElements\": [\r\n        \"SUL\"\r\n      ],\r\n      \"city\": \"XXXXX\",\r\n      \"dob\": \"01/23/1980\",\r\n      \"email\": \"xyz@abc.com\",\r\n      \"firstName\": \"John\",\r\n      \"lastName\": \"Smith\",\r\n      \"phone\": \"9876543210\",\r\n      \"ssn\": \"000000000\",\r\n      \"state\": \"XX\",\r\n      \"zipcode\": \"XXXXX\"\r\n    },\r\n    \"otherInputs\": {}\r\n  }\r\n]"
 				},
 				"description": ""
 			},
