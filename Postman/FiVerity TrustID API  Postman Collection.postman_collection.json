@@ -1,0 +1,756 @@
+{
+	"info": {
+		"_postman_id": "543bbe86-fb83-4d33-981b-e77d8625d20f",
+		"name": "FiVerity TrustID API",
+		"description": "FiVerity’s Trust ID API enables organizations to access the intelligence to evaluate trust on identities with relevant data through RESTful Services and have grouped the collection of data requested based on required categories. The categories are listed within the top dropdown. On choosing the category, it will display the corresponding API services and its details.<br><br><b>Below are the steps to obtain bearer token for API authorization:</b><br><ul><li>Step 1 : FiVerity will create the user based on email address you provide.</li><li>Step 2 : Once FiVerity creates your user, you will receive an email with username and temporary password. Navigate to <a href=\"https://staging-trustid.auth.us-east-2.amazoncognito.com/login?response_type=code&client_id=3fcgml575nn85d4s2adc8t0dsp&redirect_uri=https://staging-docs.fiverity.com\">AWS Cognito Domain URL</a> and sign-in using username and temporary password.</li><li>Step 3 : Once logged in, the user will be redirected to URL that has code query parameter. Take the value from query parameter. This value is the authorization code.</li><li>Step 4 : Using authorization code, the user will hit the token endpoint of TrustID to acquire the access token.</li><li>Step 5 : This access token will be used to call TrustID lookup service endpoint by the user.</li></ul><br><b>Below are the steps to authorize and use trustid API</b><br><ul><li>Step 1 : Click the Authorize button.</li><li>Step 2 : Enter the access token received earlier and click authorize.</li><li>Step 3 : Navigate to trustid/ping (Trust ID Test Service) endpoint.</li><li>Step 4 : Execute button will be enabled once you click Try It Out.</li><li>Step 5 : Click the Execute button. If the access token entered is correct, you will be able to receive the response as Successful ping from &lt;your_username&gt;. If not, you will get an error response.</li><li>Step 6 : If you get error response, please contact <a href= \"mailto: support@fiverity.com\">support@fiverity.com</a> for help.</li><li>Step 7 : Once you receive successful response, go to /trustid/lookup endpoint (Trust ID Lookup Service).</li><li>Step 8 : Click Try it out and Enter the input request body as mentioned in the sample response given in the endpoint.</li><li>Step 9 : Click Execute and you will get successful Trust ID lookup response from FiVerity’s application service.</li><li>Step 10 : If you get error response based on validations, please correct the input request accordingly and execute it again.</li></ul>\n\nContact Support:\n Name: In case of any issues while processing, please write to us at support@fiverity.com\n Email: support@fiverity.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29264170",
+		"_collection_link": "https://restless-firefly-788451.postman.co/workspace/Dhivya~4253c0f9-6a6c-4961-94cf-9a0d2e220bcc/collection/29264170-543bbe86-fb83-4d33-981b-e77d8625d20f?action=share&source=collection_link&creator=29264170"
+	},
+	"item": [
+		{
+			"name": "trustid",
+			"item": [
+				{
+					"name": "lookup",
+					"item": [
+						{
+							"name": "TrustID API Lookup Service",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"applicationDate\": \"1978-07-15\",\n  \"identityElements\": {\n    \"addressElements\": {\n      \"addressLine1\": \"1 west st\",\n      \"city\": \"Paterson\",\n      \"state\": \"NJ\",\n      \"zipcode\": \"11224\",\n      \"addressLine2\": \"unit A\",\n      \"countryCode\": \"US\"\n    },\n    \"dob\": \"1978-07-15\",\n    \"email\": \"john@example.com\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Smith\",\n    \"phone\": \"1111111111\",\n    \"ssn\": \"111111111\",\n    \"ip\": \"192.168.0.1\"\n  },\n  \"referenceId\": \"1234567ABC\",\n  \"applicationType\": \"<string>\",\n  \"applicationStatus\": \"<string>\",\n  \"amount\": \"<double>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/trustid/lookup",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"trustid",
+										"lookup"
+									]
+								},
+								"description": "TrustID API Lookup Service"
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"applicationDate\": \"1978-07-15\",\n  \"identityElements\": {\n    \"addressElements\": {\n      \"addressLine1\": \"1 west st\",\n      \"city\": \"Paterson\",\n      \"state\": \"NJ\",\n      \"zipcode\": \"11224\",\n      \"addressLine2\": \"unit A\",\n      \"countryCode\": \"US\"\n    },\n    \"dob\": \"1978-07-15\",\n    \"email\": \"john@example.com\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Smith\",\n    \"phone\": \"1111111111\",\n    \"ssn\": \"111111111\",\n    \"ip\": \"192.168.0.1\"\n  },\n  \"referenceId\": \"1234567ABC\",\n  \"applicationType\": \"<string>\",\n  \"applicationStatus\": \"<string>\",\n  \"amount\": \"<double>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/trustid/lookup",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"trustid",
+												"lookup"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"referenceId\": \"<string>\",\n  \"fraudAttributes\": {\n    \"syntheticFraud\": [\n      {\n        \"model\": \"<string>\",\n        \"score\": \"<string>\",\n        \"level\": \"<string>\",\n        \"recommendation\": \"<string>\",\n        \"flags\": [\n          {\n            \"name\": \"<string>\",\n            \"value\": \"<string>\",\n            \"assessment\": \"<string>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"value\": \"<string>\",\n            \"assessment\": \"<string>\"\n          }\n        ]\n      },\n      {\n        \"model\": \"<string>\",\n        \"score\": \"<string>\",\n        \"level\": \"<string>\",\n        \"recommendation\": \"<string>\",\n        \"flags\": [\n          {\n            \"name\": \"<string>\",\n            \"value\": \"<string>\",\n            \"assessment\": \"<string>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"value\": \"<string>\",\n            \"assessment\": \"<string>\"\n          }\n        ]\n      }\n    ],\n    \"identityTheft\": {\n      \"score\": \"<string>\",\n      \"level\": \"<string>\",\n      \"recommendation\": \"<string>\",\n      \"flags\": [\n        {\n          \"name\": \"<string>\",\n          \"value\": \"<string>\",\n          \"assessment\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"value\": \"<string>\",\n          \"assessment\": \"<string>\"\n        }\n      ]\n    }\n  },\n  \"fraudHistory\": {\n    \"result\": \"<string>\",\n    \"recommendation\": \"<string>\",\n    \"fraudHistory\": [\n      {\n        \"dateReported\": \"<string>\",\n        \"reportingEntity\": \"<string>\",\n        \"amountReported\": \"<string>\",\n        \"fraudCategory\": \"<string>\",\n        \"accountType\": \"<string>\",\n        \"matchElements\": \"<string>\",\n        \"matchLevel\": \"<string>\"\n      },\n      {\n        \"dateReported\": \"<string>\",\n        \"reportingEntity\": \"<string>\",\n        \"amountReported\": \"<string>\",\n        \"fraudCategory\": \"<string>\",\n        \"accountType\": \"<string>\",\n        \"matchElements\": \"<string>\",\n        \"matchLevel\": \"<string>\"\n      }\n    ]\n  },\n  \"fraudVariables\": [\n    {\n      \"categoryName\": \"<string>\",\n      \"metaData\": [\n        {\n          \"name\": \"<string>\",\n          \"value\": \"<string>\",\n          \"assessment\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"value\": \"<string>\",\n          \"assessment\": \"<string>\"\n        }\n      ],\n      \"dataBreachMetaData\": [\n        {\n          \"breachId\": \"<string>\",\n          \"breachDate\": \"<string>\",\n          \"breachName\": \"<string>\",\n          \"breachSource\": \"<string>\",\n          \"breachDescription\": \"<string>\",\n          \"breachRecommendations\": \"<string>\",\n          \"breachExposureScore\": \"<string>\",\n          \"category\": \"<string>\"\n        },\n        {\n          \"breachId\": \"<string>\",\n          \"breachDate\": \"<string>\",\n          \"breachName\": \"<string>\",\n          \"breachSource\": \"<string>\",\n          \"breachDescription\": \"<string>\",\n          \"breachRecommendations\": \"<string>\",\n          \"breachExposureScore\": \"<string>\",\n          \"category\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"categoryName\": \"<string>\",\n      \"metaData\": [\n        {\n          \"name\": \"<string>\",\n          \"value\": \"<string>\",\n          \"assessment\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"value\": \"<string>\",\n          \"assessment\": \"<string>\"\n        }\n      ],\n      \"dataBreachMetaData\": [\n        {\n          \"breachId\": \"<string>\",\n          \"breachDate\": \"<string>\",\n          \"breachName\": \"<string>\",\n          \"breachSource\": \"<string>\",\n          \"breachDescription\": \"<string>\",\n          \"breachRecommendations\": \"<string>\",\n          \"breachExposureScore\": \"<string>\",\n          \"category\": \"<string>\"\n        },\n        {\n          \"breachId\": \"<string>\",\n          \"breachDate\": \"<string>\",\n          \"breachName\": \"<string>\",\n          \"breachSource\": \"<string>\",\n          \"breachDescription\": \"<string>\",\n          \"breachRecommendations\": \"<string>\",\n          \"breachExposureScore\": \"<string>\",\n          \"category\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"version\": \"<string>\",\n  \"remarks\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}"
+								},
+								{
+									"name": "Bad request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"applicationDate\": \"1978-07-15\",\n  \"identityElements\": {\n    \"addressElements\": {\n      \"addressLine1\": \"1 west st\",\n      \"city\": \"Paterson\",\n      \"state\": \"NJ\",\n      \"zipcode\": \"11224\",\n      \"addressLine2\": \"unit A\",\n      \"countryCode\": \"US\"\n    },\n    \"dob\": \"1978-07-15\",\n    \"email\": \"john@example.com\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Smith\",\n    \"phone\": \"1111111111\",\n    \"ssn\": \"111111111\",\n    \"ip\": \"192.168.0.1\"\n  },\n  \"referenceId\": \"1234567ABC\",\n  \"applicationType\": \"<string>\",\n  \"applicationStatus\": \"<string>\",\n  \"amount\": \"<double>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/trustid/lookup",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"trustid",
+												"lookup"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Service is unauthorized",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"applicationDate\": \"1978-07-15\",\n  \"identityElements\": {\n    \"addressElements\": {\n      \"addressLine1\": \"1 west st\",\n      \"city\": \"Paterson\",\n      \"state\": \"NJ\",\n      \"zipcode\": \"11224\",\n      \"addressLine2\": \"unit A\",\n      \"countryCode\": \"US\"\n    },\n    \"dob\": \"1978-07-15\",\n    \"email\": \"john@example.com\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Smith\",\n    \"phone\": \"1111111111\",\n    \"ssn\": \"111111111\",\n    \"ip\": \"192.168.0.1\"\n  },\n  \"referenceId\": \"1234567ABC\",\n  \"applicationType\": \"<string>\",\n  \"applicationStatus\": \"<string>\",\n  \"amount\": \"<double>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/trustid/lookup",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"trustid",
+												"lookup"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Service is forbidden",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"applicationDate\": \"1978-07-15\",\n  \"identityElements\": {\n    \"addressElements\": {\n      \"addressLine1\": \"1 west st\",\n      \"city\": \"Paterson\",\n      \"state\": \"NJ\",\n      \"zipcode\": \"11224\",\n      \"addressLine2\": \"unit A\",\n      \"countryCode\": \"US\"\n    },\n    \"dob\": \"1978-07-15\",\n    \"email\": \"john@example.com\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Smith\",\n    \"phone\": \"1111111111\",\n    \"ssn\": \"111111111\",\n    \"ip\": \"192.168.0.1\"\n  },\n  \"referenceId\": \"1234567ABC\",\n  \"applicationType\": \"<string>\",\n  \"applicationStatus\": \"<string>\",\n  \"amount\": \"<double>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/trustid/lookup",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"trustid",
+												"lookup"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Service is not found",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"applicationDate\": \"1978-07-15\",\n  \"identityElements\": {\n    \"addressElements\": {\n      \"addressLine1\": \"1 west st\",\n      \"city\": \"Paterson\",\n      \"state\": \"NJ\",\n      \"zipcode\": \"11224\",\n      \"addressLine2\": \"unit A\",\n      \"countryCode\": \"US\"\n    },\n    \"dob\": \"1978-07-15\",\n    \"email\": \"john@example.com\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Smith\",\n    \"phone\": \"1111111111\",\n    \"ssn\": \"111111111\",\n    \"ip\": \"192.168.0.1\"\n  },\n  \"referenceId\": \"1234567ABC\",\n  \"applicationType\": \"<string>\",\n  \"applicationStatus\": \"<string>\",\n  \"amount\": \"<double>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/trustid/lookup",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"trustid",
+												"lookup"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Service is unavailable",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"applicationDate\": \"1978-07-15\",\n  \"identityElements\": {\n    \"addressElements\": {\n      \"addressLine1\": \"1 west st\",\n      \"city\": \"Paterson\",\n      \"state\": \"NJ\",\n      \"zipcode\": \"11224\",\n      \"addressLine2\": \"unit A\",\n      \"countryCode\": \"US\"\n    },\n    \"dob\": \"1978-07-15\",\n    \"email\": \"john@example.com\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Smith\",\n    \"phone\": \"1111111111\",\n    \"ssn\": \"111111111\",\n    \"ip\": \"192.168.0.1\"\n  },\n  \"referenceId\": \"1234567ABC\",\n  \"applicationType\": \"<string>\",\n  \"applicationStatus\": \"<string>\",\n  \"amount\": \"<double>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/trustid/lookup",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"trustid",
+												"lookup"
+											]
+										}
+									},
+									"status": "Service Unavailable",
+									"code": 503,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "authorize",
+					"item": [
+						{
+							"name": "token",
+							"item": [
+								{
+									"name": "get Access Token",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"authorization_code\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/trustid/authorize/token",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"trustid",
+												"authorize",
+												"token"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"authorization_code\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/trustid/authorize/token",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"trustid",
+														"authorize",
+														"token"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"access_token\": \"<string>\",\n  \"refresh_token\": \"<string>\",\n  \"expires_in\": \"<string>\",\n  \"token_type\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "refresh",
+							"item": [
+								{
+									"name": "get Refreshed Token",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"refresh_token\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/trustid/authorize/refresh",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"trustid",
+												"authorize",
+												"refresh"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"refresh_token\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/trustid/authorize/refresh",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"trustid",
+														"authorize",
+														"refresh"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"access_token\": \"<string>\",\n  \"expires_in\": \"<string>\",\n  \"token_type\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "ping",
+					"item": [
+						{
+							"name": "TrustID API Test Service",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/trustid/ping",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"trustid",
+										"ping"
+									]
+								},
+								"description": "TrustID API Test Service"
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/trustid/ping",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"trustid",
+												"ping"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "<string>"
+								},
+								{
+									"name": "Bad request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/trustid/ping",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"trustid",
+												"ping"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Service is unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/trustid/ping",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"trustid",
+												"ping"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Service is forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/trustid/ping",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"trustid",
+												"ping"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Service is not found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/trustid/ping",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"trustid",
+												"ping"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Service is unavailable",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/trustid/ping",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"trustid",
+												"ping"
+											]
+										}
+									},
+									"status": "Service Unavailable",
+									"code": 503,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{bearerToken}}",
+				"type": "string"
+			}
+		]
+	},
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://staging-api.fiverity.com"
+		}
+	]
+}
